@@ -1,0 +1,498 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Quote it — Privacy Policy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #F5F7FA;
+    --surface: #FFFFFF;
+    --text: #101317;
+    --muted: #5B6572;
+    --border: #D9DEE4;
+    --accent: #0B5FFF;
+    --accent-soft: #EAF1FF;
+    --font-display: 'Space Grotesk', system-ui, sans-serif;
+    --font-body: 'IBM Plex Sans', -apple-system, Helvetica, Arial, sans-serif;
+    --font-mono: 'IBM Plex Mono', ui-monospace, Consolas, monospace;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0E1116;
+      --surface: #161B22;
+      --text: #EDF1F5;
+      --muted: #94A1B0;
+      --border: #262E38;
+      --accent: #5B92FF;
+      --accent-soft: rgba(91, 146, 255, 0.14);
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0E1116;
+    --surface: #161B22;
+    --text: #EDF1F5;
+    --muted: #94A1B0;
+    --border: #262E38;
+    --accent: #5B92FF;
+    --accent-soft: rgba(91, 146, 255, 0.14);
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent); }
+  a:focus-visible, button:focus-visible, .nav-link:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+
+  .letterhead {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+  }
+  .letterhead-inner {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 40px 24px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .brand-mark {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: var(--accent);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 18px;
+    flex: none;
+  }
+  .brand-name {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 20px;
+  }
+  .brand-tag {
+    font-size: 12.5px;
+    color: var(--muted);
+  }
+  .doc-meta {
+    text-align: right;
+  }
+  .doc-title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 26px;
+    color: var(--accent);
+    text-wrap: balance;
+  }
+  .doc-fields {
+    margin-top: 6px;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--muted);
+    display: grid;
+    gap: 2px;
+  }
+  .doc-fields span.label {
+    color: var(--muted);
+    letter-spacing: 0.04em;
+  }
+  .doc-fields b {
+    color: var(--text);
+    font-weight: 500;
+  }
+
+  .layout {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 40px 24px 96px;
+    display: grid;
+    grid-template-columns: 220px minmax(0, 1fr);
+    gap: 56px;
+    align-items: start;
+  }
+  @media (max-width: 780px) {
+    .layout { grid-template-columns: 1fr; gap: 32px; }
+    .toc { display: none; }
+  }
+
+  .toc {
+    position: sticky;
+    top: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .toc-label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 10px;
+  }
+  .nav-link {
+    display: flex;
+    gap: 10px;
+    align-items: baseline;
+    padding: 7px 8px;
+    margin: 0 -8px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--muted);
+    font-size: 13.5px;
+    transition: background 0.15s ease, color 0.15s ease;
+  }
+  .nav-link:hover { background: var(--accent-soft); color: var(--text); }
+  .nav-link .n {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--accent);
+    flex: none;
+    width: 18px;
+  }
+
+  main { max-width: 680px; min-width: 0; }
+
+  .lede {
+    font-size: 16px;
+    color: var(--muted);
+    margin: 0 0 40px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid var(--border);
+  }
+  .lede strong { color: var(--text); }
+
+  section {
+    margin-bottom: 40px;
+    scroll-margin-top: 24px;
+  }
+  section h2 {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    font-family: var(--font-display);
+    font-size: 19px;
+    font-weight: 600;
+    margin: 0 0 14px;
+    text-wrap: balance;
+  }
+  section h2 .n {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--accent);
+  }
+  section p { margin: 0 0 14px; font-size: 15px; }
+  section ul { margin: 0 0 14px; padding-left: 20px; }
+  section li { margin-bottom: 8px; font-size: 15px; }
+  section li::marker { color: var(--accent); }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px 18px;
+    margin: 0 0 14px;
+  }
+  .card-label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 6px;
+  }
+  .card p:last-child { margin-bottom: 0; }
+
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 0 14px;
+    font-size: 13.5px;
+  }
+  .data-table th {
+    text-align: left;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--muted);
+    border-bottom: 2px solid var(--text);
+    padding: 8px 10px 8px 0;
+  }
+  .data-table td {
+    padding: 10px 10px 10px 0;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  .data-table tr:last-child td { border-bottom: none; }
+  .pill {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 999px;
+    background: var(--accent-soft);
+    color: var(--accent);
+    white-space: nowrap;
+  }
+
+  .contact-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 24px;
+  }
+  .contact-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 14.5px;
+  }
+  .contact-row:last-child { border-bottom: none; }
+  .contact-row .k { color: var(--muted); }
+  .contact-row .v { text-align: right; font-weight: 500; }
+
+  .placeholder {
+    background: var(--accent-soft);
+    color: var(--accent);
+    padding: 1px 5px;
+    border-radius: 4px;
+    font-family: var(--font-mono);
+    font-size: 13px;
+  }
+
+  footer {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 0 24px 48px;
+    color: var(--muted);
+    font-size: 12.5px;
+    border-top: 1px solid var(--border);
+    padding-top: 24px;
+  }
+</style>
+</head>
+<body>
+
+  <header class="letterhead">
+    <div class="letterhead-inner">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">Qi</div>
+        <div>
+          <div class="brand-name">Quote it</div>
+          <div class="brand-tag">Estimates &amp; Invoices, on site</div>
+        </div>
+      </div>
+      <div class="doc-meta">
+        <div class="doc-title">Privacy Policy</div>
+        <div class="doc-fields">
+          <div><span class="label">Effective</span> <b>August 27, 2026</b></div>
+          <div><span class="label">Applies to</span> <b>Quote it — iOS &amp; Android</b></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="layout">
+    <nav class="toc" aria-label="Sections">
+      <div class="toc-label">Contents</div>
+      <a class="nav-link" href="#overview"><span class="n">01</span>Overview</a>
+      <a class="nav-link" href="#collect"><span class="n">02</span>Information we collect</a>
+      <a class="nav-link" href="#use"><span class="n">03</span>How we use it</a>
+      <a class="nav-link" href="#storage"><span class="n">04</span>Storage &amp; retention</a>
+      <a class="nav-link" href="#sharing"><span class="n">05</span>Sharing with others</a>
+      <a class="nav-link" href="#security"><span class="n">06</span>Security</a>
+      <a class="nav-link" href="#choices"><span class="n">07</span>Your choices</a>
+      <a class="nav-link" href="#children"><span class="n">08</span>Children's privacy</a>
+      <a class="nav-link" href="#changes"><span class="n">09</span>Changes</a>
+      <a class="nav-link" href="#contact"><span class="n">10</span>Contact</a>
+    </nav>
+
+    <main>
+      <p class="lede">
+        <strong>Quote it</strong> is built local-first: every client, catalog item, estimate, and invoice you create
+        lives on your device by default. This policy explains the little that ever leaves it — and exactly when
+        that happens.
+      </p>
+
+      <section id="overview">
+        <h2><span class="n">01</span>Overview</h2>
+        <p>
+          Quote it is an offline-first quoting and invoicing app for solo contractors and small trade crews. The
+          app works fully without an account. Signing in is optional and only needed if you want cloud backup,
+          multi-device sync, or to share a business with up to five crew members.
+        </p>
+        <p>
+          This policy covers what happens in both cases — signed out (fully local) and signed in (optional sync).
+        </p>
+      </section>
+
+      <section id="collect">
+        <h2><span class="n">02</span>Information we collect</h2>
+        <table class="data-table">
+          <thead>
+            <tr><th>Category</th><th>Examples</th><th>Where it lives</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Business data you enter</td>
+              <td>Clients, catalog items, estimates, invoices, line items, payments, business profile, logo</td>
+              <td><span class="pill">Device only</span></td>
+            </tr>
+            <tr>
+              <td>Account data</td>
+              <td>Email address, password (handled by Firebase Authentication — never stored in plain text by us)</td>
+              <td><span class="pill">Cloud, if signed in</span></td>
+            </tr>
+            <tr>
+              <td>Synced business data</td>
+              <td>The same clients/catalog/invoices above, mirrored for backup and crew sharing</td>
+              <td><span class="pill">Cloud, if sync used</span></td>
+            </tr>
+            <tr>
+              <td>Crew &amp; invite data</td>
+              <td>Crew member email, role, and a short-lived invite code (expires after 7 days)</td>
+              <td><span class="pill">Cloud, if crew used</span></td>
+            </tr>
+            <tr>
+              <td>Purchase data</td>
+              <td>Subscription status for Quote it Pro, handled entirely by Apple/Google — we never see your
+                payment details</td>
+              <td><span class="pill">App Store / Play</span></td>
+            </tr>
+          </tbody>
+        </table>
+        <p>
+          We do not collect analytics, advertising identifiers, or usage tracking of any kind. There are no
+          third-party ad or analytics SDKs in Quote it.
+        </p>
+      </section>
+
+      <section id="use">
+        <h2><span class="n">03</span>How we use it</h2>
+        <ul>
+          <li>To generate the PDF estimates and invoices you create, including your business logo and signature.</li>
+          <li>To back up your business data and restore it if you sign in on a new device.</li>
+          <li>To let an invited crew member see the same clients, catalog, and jobs as the business owner.</li>
+          <li>To unlock Quote it Pro features after a verified purchase or restored subscription.</li>
+        </ul>
+        <p>We never use your data to train models, sell it, or share it for advertising.</p>
+      </section>
+
+      <section id="storage">
+        <h2><span class="n">04</span>Storage &amp; retention</h2>
+        <div class="card">
+          <div class="card-label">Default — signed out</div>
+          <p>All data is stored in a local SQLite database on your device. Nothing is transmitted anywhere. Deleting
+            the app deletes this data permanently.</p>
+        </div>
+        <div class="card">
+          <div class="card-label">Optional — signed in with sync</div>
+          <p>Business data is mirrored to Firebase Authentication and Cloud Firestore, hosted by Google, under a
+            Google Cloud project we control. Sync happens on your action — app open, saving a document, or tapping
+            "Sync Now" — never continuously in the background.</p>
+        </div>
+      </section>
+
+      <section id="sharing">
+        <h2><span class="n">05</span>Sharing with others</h2>
+        <p>We do not sell or rent your data. It is shared only with the service providers required to run the app:</p>
+        <ul>
+          <li><strong>Google Firebase</strong> — authentication and optional data sync/backup.</li>
+          <li><strong>Apple App Store / Google Play</strong> — processing in-app subscription purchases.</li>
+          <li><strong>Crew members you invite</strong> — see the same business's clients, catalog, and documents
+            once they redeem your invite code. Removing a crew member revokes their access.</li>
+        </ul>
+      </section>
+
+      <section id="security">
+        <h2><span class="n">06</span>Security</h2>
+        <p>
+          Cloud data is protected by Firestore security rules that restrict every read and write to members of your
+          business — no one outside your crew can access your data, even other Quote it users. Authentication is
+          handled by Firebase Auth; we never see or store your password.
+        </p>
+      </section>
+
+      <section id="choices">
+        <h2><span class="n">07</span>Your choices</h2>
+        <ul>
+          <li><strong>Use Quote it without an account</strong> — sync is opt-in, never required.</li>
+          <li><strong>Delete your local data</strong> — uninstalling the app removes everything stored on-device.</li>
+          <li><strong>Delete your cloud data</strong> — contact us (below) and we will delete your account and
+            associated business data from Firebase.</li>
+          <li><strong>Leave a crew</strong> — a crew member can be removed by the business owner at any time from
+            the app's Crew screen.</li>
+        </ul>
+      </section>
+
+      <section id="children">
+        <h2><span class="n">08</span>Children's privacy</h2>
+        <p>
+          Quote it is a business tool for contractors and is not directed at children. We do not knowingly collect
+          information from anyone under 13.
+        </p>
+      </section>
+
+      <section id="changes">
+        <h2><span class="n">09</span>Changes to this policy</h2>
+        <p>
+          If we change how Quote it handles your data, we'll update the effective date at the top of this page.
+          Continued use of the app after a change means you accept the update.
+        </p>
+      </section>
+
+      <section id="contact">
+        <h2><span class="n">10</span>Contact</h2>
+        <p>Questions about this policy, or a request to delete your data, can be sent to:</p>
+        <div class="contact-card">
+          <div class="contact-row">
+            <span class="k">Developer</span>
+            <span class="v">NadeSoft <span class="placeholder">confirm legal name</span></span>
+          </div>
+          <div class="contact-row">
+            <span class="k">Support email</span>
+            <span class="v"><span class="placeholder">replace-with-real-support-email</span></span>
+          </div>
+          <div class="contact-row">
+            <span class="k">App</span>
+            <span class="v">Quote it — com.nadesoft.quoteit</span>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <footer>
+    Quote it — Privacy Policy · Effective August 27, 2026
+  </footer>
+
+</body>
+</html>
