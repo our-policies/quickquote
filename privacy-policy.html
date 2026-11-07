@@ -1,12 +1,10 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Quote it — Privacy Policy</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Invoice Maker Privacy Policy</title>
+<meta name="description" content="Invoice Maker: estimates and invoices for contractors. Privacy Policy.">
 <style>
   :root {
     --bg: #F5F7FA;
@@ -297,6 +295,10 @@
     border-top: 1px solid var(--border);
     padding-top: 24px;
   }
+  .site-nav { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 10px; font-size: 13px; }
+  .site-nav a { text-decoration: none; }
+  .site-nav a[aria-current="page"] { font-weight: 700; color: var(--text); }
+  footer a { margin: 0 6px; }
 </style>
 </head>
 <body>
@@ -304,17 +306,18 @@
   <header class="letterhead">
     <div class="letterhead-inner">
       <div class="brand">
-        <div class="brand-mark" aria-hidden="true">Qi</div>
+        <div class="brand-mark" aria-hidden="true">IM</div>
         <div>
-          <div class="brand-name">Quote it</div>
-          <div class="brand-tag">Estimates &amp; Invoices, on site</div>
+          <div class="brand-name">Invoice Maker</div>
+          <div class="brand-tag">Estimates &amp; invoices for contractors</div>
+          <nav class="site-nav" aria-label="Site"><a href="index.html">Home</a><a href="support.html">Support</a><a href="privacy-policy.html" aria-current="page">Privacy Policy</a><a href="terms.html">Terms of Use</a><a href="data-deletion.html">Delete Your Data</a></nav>
         </div>
       </div>
       <div class="doc-meta">
         <div class="doc-title">Privacy Policy</div>
         <div class="doc-fields">
-          <div><span class="label">Effective</span> <b>August 27, 2026</b></div>
-          <div><span class="label">Applies to</span> <b>Quote it — iOS &amp; Android</b></div>
+          <div><span class="label">Updated</span> <b>November 7, 2026</b></div>
+          <div><span class="label">Applies to</span> <b>Invoice Maker for iPhone &amp; Android</b></div>
         </div>
       </div>
     </div>
@@ -325,173 +328,136 @@
       <div class="toc-label">Contents</div>
       <a class="nav-link" href="#overview"><span class="n">01</span>Overview</a>
       <a class="nav-link" href="#collect"><span class="n">02</span>Information we collect</a>
-      <a class="nav-link" href="#use"><span class="n">03</span>How we use it</a>
-      <a class="nav-link" href="#storage"><span class="n">04</span>Storage &amp; retention</a>
-      <a class="nav-link" href="#sharing"><span class="n">05</span>Sharing with others</a>
-      <a class="nav-link" href="#security"><span class="n">06</span>Security</a>
-      <a class="nav-link" href="#choices"><span class="n">07</span>Your choices</a>
-      <a class="nav-link" href="#children"><span class="n">08</span>Children's privacy</a>
-      <a class="nav-link" href="#changes"><span class="n">09</span>Changes</a>
-      <a class="nav-link" href="#contact"><span class="n">10</span>Contact</a>
+      <a class="nav-link" href="#permissions"><span class="n">03</span>Permissions</a>
+      <a class="nav-link" href="#use"><span class="n">04</span>How we use it</a>
+      <a class="nav-link" href="#storage"><span class="n">05</span>Storage and retention</a>
+      <a class="nav-link" href="#sharing"><span class="n">06</span>Sharing with others</a>
+      <a class="nav-link" href="#security"><span class="n">07</span>Security</a>
+      <a class="nav-link" href="#choices"><span class="n">08</span>Your choices and deleting your data</a>
+      <a class="nav-link" href="#children"><span class="n">09</span>Children's privacy</a>
+      <a class="nav-link" href="#changes"><span class="n">10</span>Changes to this policy</a>
+      <a class="nav-link" href="#contact"><span class="n">11</span>Contact</a>
     </nav>
 
     <main>
-      <p class="lede">
-        <strong>Quote it</strong> is built local-first: every client, catalog item, estimate, and invoice you create
-        lives on your device by default. This policy explains the little that ever leaves it — and exactly when
-        that happens.
-      </p>
+      <p class="lede"><strong>Invoice Maker</strong> is local-first: the clients, catalog items, estimates and invoices you create are stored on
+  your device. This policy explains what leaves your device, and when.</p>
 
       <section id="overview">
         <h2><span class="n">01</span>Overview</h2>
-        <p>
-          Quote it is an offline-first quoting and invoicing app for solo contractors and small trade crews. The
-          app works fully without an account. Signing in is optional and only needed if you want cloud backup,
-          multi-device sync, or to share a business with up to five crew members.
-        </p>
-        <p>
-          This policy covers what happens in both cases — signed out (fully local) and signed in (optional sync).
-        </p>
+        <p>Invoice Maker is an offline-first estimate and invoice app for contractors and small crews. It works fully without an
+          account. Signing in is optional and only needed for cloud backup, using the same business on more than one device,
+          or sharing a business with up to five crew members.</p>
+        <p>This policy covers both cases: signed out (everything stays on your device) and signed in (optional sync).</p>
       </section>
 
       <section id="collect">
         <h2><span class="n">02</span>Information we collect</h2>
         <table class="data-table">
-          <thead>
-            <tr><th>Category</th><th>Examples</th><th>Where it lives</th></tr>
-          </thead>
+          <thead><tr><th>Category</th><th>Examples</th><th>Where it lives</th></tr></thead>
           <tbody>
-            <tr>
-              <td>Business data you enter</td>
-              <td>Clients, catalog items, estimates, invoices, line items, payments, business profile, logo</td>
-              <td><span class="pill">Device only</span></td>
-            </tr>
-            <tr>
-              <td>Account data</td>
-              <td>Email address, password (handled by Firebase Authentication — never stored in plain text by us)</td>
-              <td><span class="pill">Cloud, if signed in</span></td>
-            </tr>
-            <tr>
-              <td>Synced business data</td>
-              <td>The same clients/catalog/invoices above, mirrored for backup and crew sharing</td>
-              <td><span class="pill">Cloud, if sync used</span></td>
-            </tr>
-            <tr>
-              <td>Crew &amp; invite data</td>
-              <td>Crew member email, role, and a short-lived invite code (expires after 7 days)</td>
-              <td><span class="pill">Cloud, if crew used</span></td>
-            </tr>
-            <tr>
-              <td>Purchase data</td>
-              <td>Subscription status for Quote it Pro, handled entirely by Apple/Google — we never see your
-                payment details</td>
-              <td><span class="pill">App Store / Play</span></td>
-            </tr>
+            <tr><td>Business data you enter</td><td>Clients and their contact details, catalog items, estimates, invoices, line items, payments, signatures, business profile, logo</td><td><span class="pill">Your device</span></td></tr>
+            <tr><td>Account data</td><td>Email address and password. The password is handled by Firebase Authentication; we never see or store it.</td><td><span class="pill">Cloud, if signed in</span></td></tr>
+            <tr><td>Synced business data</td><td>A copy of the business data above, including signatures and your business profile, for backup and crew sharing. Your logo image itself stays on your device.</td><td><span class="pill">Cloud, if signed in</span></td></tr>
+            <tr><td>Crew and invite data</td><td>Crew members' email addresses and roles, and invite codes (each expires after 7 days)</td><td><span class="pill">Cloud, if crew is used</span></td></tr>
+            <tr><td>Purchases</td><td>Whether you have an active Invoice Maker Pro subscription. Apple or Google processes the payment; we never see your payment details.</td><td><span class="pill">App Store / Google Play</span></td></tr>
           </tbody>
         </table>
-        <p>
-          We do not collect analytics, advertising identifiers, or usage tracking of any kind. There are no
-          third-party ad or analytics SDKs in Quote it.
-        </p>
+        <p>We do not collect analytics, advertising identifiers, location, or usage tracking of any kind. Invoice Maker contains no
+          advertising or analytics SDKs, and we do not track you across other apps or websites.</p>
+      </section>
+
+      <section id="permissions">
+        <h2><span class="n">03</span>Permissions</h2>
+        <ul>
+          <li><strong>Photos:</strong> only when you choose a business logo. You pick one image; the app does not read the rest of your library.</li>
+          <li><strong>Camera:</strong> never used. The photo picker library includes camera support, but Invoice Maker never opens the camera.</li>
+        </ul>
       </section>
 
       <section id="use">
-        <h2><span class="n">03</span>How we use it</h2>
+        <h2><span class="n">04</span>How we use it</h2>
         <ul>
-          <li>To generate the PDF estimates and invoices you create, including your business logo and signature.</li>
-          <li>To back up your business data and restore it if you sign in on a new device.</li>
-          <li>To let an invited crew member see the same clients, catalog, and jobs as the business owner.</li>
-          <li>To unlock Quote it Pro features after a verified purchase or restored subscription.</li>
+          <li>To create the estimate, invoice and receipt PDFs you share, with your logo and the client's signature.</li>
+          <li>To back up your business data and restore it when you sign in on another device.</li>
+          <li>To let crew members you invite see the same clients, catalog and documents.</li>
+          <li>To unlock Invoice Maker Pro after a purchase or a restored subscription.</li>
         </ul>
-        <p>We never use your data to train models, sell it, or share it for advertising.</p>
+        <p>We never sell your data, use it for advertising, or use it to train AI models.</p>
       </section>
 
       <section id="storage">
-        <h2><span class="n">04</span>Storage &amp; retention</h2>
+        <h2><span class="n">05</span>Storage and retention</h2>
         <div class="card">
-          <div class="card-label">Default — signed out</div>
-          <p>All data is stored in a local SQLite database on your device. Nothing is transmitted anywhere. Deleting
-            the app deletes this data permanently.</p>
+          <div class="card-label">Signed out (default)</div>
+          <p>All data is stored in a database on your device and nothing is sent anywhere. Deleting the app deletes this data.</p>
         </div>
         <div class="card">
-          <div class="card-label">Optional — signed in with sync</div>
-          <p>Business data is mirrored to Firebase Authentication and Cloud Firestore, hosted by Google, under a
-            Google Cloud project we control. Sync happens on your action — app open, saving a document, or tapping
-            "Sync Now" — never continuously in the background.</p>
+          <div class="card-label">Signed in, with sync</div>
+          <p>Your account is stored in Firebase Authentication and your synced business data in Cloud Firestore, both run by
+            Google in a Google Cloud project we control. The app syncs when you open it while signed in and when you tap
+            "Sync Now"; it does not sync in the background. Cloud data is kept until you delete your account.</p>
         </div>
       </section>
 
       <section id="sharing">
-        <h2><span class="n">05</span>Sharing with others</h2>
-        <p>We do not sell or rent your data. It is shared only with the service providers required to run the app:</p>
+        <h2><span class="n">06</span>Sharing with others</h2>
+        <p>We do not sell or rent your data. It is shared only with the services needed to run the app:</p>
         <ul>
-          <li><strong>Google Firebase</strong> — authentication and optional data sync/backup.</li>
-          <li><strong>Apple App Store / Google Play</strong> — processing in-app subscription purchases.</li>
-          <li><strong>Crew members you invite</strong> — see the same business's clients, catalog, and documents
-            once they redeem your invite code. Removing a crew member revokes their access.</li>
+          <li><strong>Google Firebase</strong> (Authentication and Cloud Firestore): sign-in, backup and sync.</li>
+          <li><strong>Apple App Store and Google Play</strong>: subscription purchases.</li>
+          <li><strong>Crew members you invite</strong>: they see the business's clients, catalog and documents after they
+            redeem your invite code. Removing a crew member ends their access.</li>
         </ul>
+        <p>When you share a PDF, you choose the app and the recipient (email, WhatsApp, SMS and so on); we are not involved.</p>
       </section>
 
       <section id="security">
-        <h2><span class="n">06</span>Security</h2>
-        <p>
-          Cloud data is protected by Firestore security rules that restrict every read and write to members of your
-          business — no one outside your crew can access your data, even other Quote it users. Authentication is
-          handled by Firebase Auth; we never see or store your password.
-        </p>
+        <h2><span class="n">07</span>Security</h2>
+        <p>Data is sent to the cloud over encrypted connections. Firestore security rules allow only members of your business to
+          read or change its data, and only someone with a valid invite code can join it. Passwords are handled by Firebase
+          Authentication.</p>
       </section>
 
       <section id="choices">
-        <h2><span class="n">07</span>Your choices</h2>
+        <h2><span class="n">08</span>Your choices and deleting your data</h2>
         <ul>
-          <li><strong>Use Quote it without an account</strong> — sync is opt-in, never required.</li>
-          <li><strong>Delete your local data</strong> — uninstalling the app removes everything stored on-device.</li>
-          <li><strong>Delete your cloud data</strong> — contact us (below) and we will delete your account and
-            associated business data from Firebase.</li>
-          <li><strong>Leave a crew</strong> — a crew member can be removed by the business owner at any time from
-            the app's Crew screen.</li>
+          <li><strong>Use Invoice Maker without an account.</strong> Sync is optional.</li>
+          <li><strong>Delete your account in the app:</strong> Settings &gt; Manage Account &amp; Sync &gt; Delete My Account. This
+            permanently deletes your account and your cloud data. If you own the business, its cloud copy is deleted for your
+            whole crew. Data on your device stays there until you delete the app.</li>
+          <li><strong>Delete data on your device:</strong> delete the app.</li>
+          <li><strong>Leave a crew:</strong> the business owner can remove a crew member at any time from the Crew screen.</li>
+          <li><strong>Ask us:</strong> email us (below) and we will delete your account and cloud data for you.</li>
         </ul>
+        <p>More detail: <a href="data-deletion.html">Delete your data</a>.</p>
       </section>
 
       <section id="children">
-        <h2><span class="n">08</span>Children's privacy</h2>
-        <p>
-          Quote it is a business tool for contractors and is not directed at children. We do not knowingly collect
-          information from anyone under 13.
-        </p>
+        <h2><span class="n">09</span>Children's privacy</h2>
+        <p>Invoice Maker is a business tool and is not directed at children. We do not knowingly collect information from anyone under 13.</p>
       </section>
 
       <section id="changes">
-        <h2><span class="n">09</span>Changes to this policy</h2>
-        <p>
-          If we change how Quote it handles your data, we'll update the effective date at the top of this page.
-          Continued use of the app after a change means you accept the update.
-        </p>
+        <h2><span class="n">10</span>Changes to this policy</h2>
+        <p>If we change how Invoice Maker handles your data, we will update this page and the date at the top.</p>
       </section>
 
       <section id="contact">
-        <h2><span class="n">10</span>Contact</h2>
-        <p>Questions about this policy, or a request to delete your data, can be sent to:</p>
+        <h2><span class="n">11</span>Contact</h2>
+        <p>Questions about this policy, or a request to delete your data:</p>
         <div class="contact-card">
-          <div class="contact-row">
-            <span class="k">Developer</span>
-            <span class="v">NadeSoft <span class="placeholder">confirm legal name</span></span>
-          </div>
-          <div class="contact-row">
-            <span class="k">Support email</span>
-            <span class="v"><span class="placeholder">replace-with-real-support-email</span></span>
-          </div>
-          <div class="contact-row">
-            <span class="k">App</span>
-            <span class="v">Quote it — com.nadesoft.quoteit</span>
-          </div>
+          <div class="contact-row"><span class="k">Developer</span><span class="v">Abdullah Al Mahmud</span></div>
+          <div class="contact-row"><span class="k">Email</span><span class="v"><a href="mailto:abdudevs@gmail.com">abdudevs@gmail.com</a></span></div>
+          <div class="contact-row"><span class="k">App</span><span class="v">Invoice Maker (com.nadesoft.quoteit)</span></div>
         </div>
       </section>
     </main>
   </div>
 
   <footer>
-    Quote it — Privacy Policy · Effective August 27, 2026
+    Invoice Maker · Privacy Policy · Updated November 7, 2026<br>
+    <a href="index.html">Home</a><a href="support.html">Support</a><a href="privacy-policy.html">Privacy Policy</a><a href="terms.html">Terms of Use</a><a href="data-deletion.html">Delete Your Data</a>
   </footer>
 
 </body>

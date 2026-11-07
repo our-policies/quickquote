@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Invoice Maker Terms of Use</title>
+<meta name="description" content="Invoice Maker: estimates and invoices for contractors. Terms of Use.">
+<style>
+  :root {
+    --bg: #F5F7FA;
+    --surface: #FFFFFF;
+    --text: #101317;
+    --muted: #5B6572;
+    --border: #D9DEE4;
+    --accent: #0B5FFF;
+    --accent-soft: #EAF1FF;
+    --font-display: 'Space Grotesk', system-ui, sans-serif;
+    --font-body: 'IBM Plex Sans', -apple-system, Helvetica, Arial, sans-serif;
+    --font-mono: 'IBM Plex Mono', ui-monospace, Consolas, monospace;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0E1116;
+      --surface: #161B22;
+      --text: #EDF1F5;
+      --muted: #94A1B0;
+      --border: #262E38;
+      --accent: #5B92FF;
+      --accent-soft: rgba(91, 146, 255, 0.14);
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0E1116;
+    --surface: #161B22;
+    --text: #EDF1F5;
+    --muted: #94A1B0;
+    --border: #262E38;
+    --accent: #5B92FF;
+    --accent-soft: rgba(91, 146, 255, 0.14);
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent); }
+  a:focus-visible, button:focus-visible, .nav-link:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+
+  .letterhead {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+  }
+  .letterhead-inner {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 40px 24px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .brand-mark {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: var(--accent);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 18px;
+    flex: none;
+  }
+  .brand-name {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 20px;
+  }
+  .brand-tag {
+    font-size: 12.5px;
+    color: var(--muted);
+  }
+  .doc-meta {
+    text-align: right;
+  }
+  .doc-title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 26px;
+    color: var(--accent);
+    text-wrap: balance;
+  }
+  .doc-fields {
+    margin-top: 6px;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--muted);
+    display: grid;
+    gap: 2px;
+  }
+  .doc-fields span.label {
+    color: var(--muted);
+    letter-spacing: 0.04em;
+  }
+  .doc-fields b {
+    color: var(--text);
+    font-weight: 500;
+  }
+
+  .layout {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 40px 24px 96px;
+    display: grid;
+    grid-template-columns: 220px minmax(0, 1fr);
+    gap: 56px;
+    align-items: start;
+  }
+  @media (max-width: 780px) {
+    .layout { grid-template-columns: 1fr; gap: 32px; }
+    .toc { display: none; }
+  }
+
+  .toc {
+    position: sticky;
+    top: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .toc-label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 10px;
+  }
+  .nav-link {
+    display: flex;
+    gap: 10px;
+    align-items: baseline;
+    padding: 7px 8px;
+    margin: 0 -8px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--muted);
+    font-size: 13.5px;
+    transition: background 0.15s ease, color 0.15s ease;
+  }
+  .nav-link:hover { background: var(--accent-soft); color: var(--text); }
+  .nav-link .n {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--accent);
+    flex: none;
+    width: 18px;
+  }
+
+  main { max-width: 680px; min-width: 0; }
+
+  .lede {
+    font-size: 16px;
+    color: var(--muted);
+    margin: 0 0 40px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid var(--border);
+  }
+  .lede strong { color: var(--text); }
+
+  section {
+    margin-bottom: 40px;
+    scroll-margin-top: 24px;
+  }
+  section h2 {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    font-family: var(--font-display);
+    font-size: 19px;
+    font-weight: 600;
+    margin: 0 0 14px;
+    text-wrap: balance;
+  }
+  section h2 .n {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--accent);
+  }
+  section p { margin: 0 0 14px; font-size: 15px; }
+  section ul { margin: 0 0 14px; padding-left: 20px; }
+  section li { margin-bottom: 8px; font-size: 15px; }
+  section li::marker { color: var(--accent); }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px 18px;
+    margin: 0 0 14px;
+  }
+  .card-label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 6px;
+  }
+  .card p:last-child { margin-bottom: 0; }
+
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 0 14px;
+    font-size: 13.5px;
+  }
+  .data-table th {
+    text-align: left;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--muted);
+    border-bottom: 2px solid var(--text);
+    padding: 8px 10px 8px 0;
+  }
+  .data-table td {
+    padding: 10px 10px 10px 0;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  .data-table tr:last-child td { border-bottom: none; }
+  .pill {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 999px;
+    background: var(--accent-soft);
+    color: var(--accent);
+    white-space: nowrap;
+  }
+
+  .contact-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 24px;
+  }
+  .contact-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 14.5px;
+  }
+  .contact-row:last-child { border-bottom: none; }
+  .contact-row .k { color: var(--muted); }
+  .contact-row .v { text-align: right; font-weight: 500; }
+
+  .placeholder {
+    background: var(--accent-soft);
+    color: var(--accent);
+    padding: 1px 5px;
+    border-radius: 4px;
+    font-family: var(--font-mono);
+    font-size: 13px;
+  }
+
+  footer {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 0 24px 48px;
+    color: var(--muted);
+    font-size: 12.5px;
+    border-top: 1px solid var(--border);
+    padding-top: 24px;
+  }
+  .site-nav { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 10px; font-size: 13px; }
+  .site-nav a { text-decoration: none; }
+  .site-nav a[aria-current="page"] { font-weight: 700; color: var(--text); }
+  footer a { margin: 0 6px; }
+</style>
+</head>
+<body>
+
+  <header class="letterhead">
+    <div class="letterhead-inner">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">IM</div>
+        <div>
+          <div class="brand-name">Invoice Maker</div>
+          <div class="brand-tag">Estimates &amp; invoices for contractors</div>
+          <nav class="site-nav" aria-label="Site"><a href="index.html">Home</a><a href="support.html">Support</a><a href="privacy-policy.html">Privacy Policy</a><a href="terms.html" aria-current="page">Terms of Use</a><a href="data-deletion.html">Delete Your Data</a></nav>
+        </div>
+      </div>
+      <div class="doc-meta">
+        <div class="doc-title">Terms of Use</div>
+        <div class="doc-fields">
+          <div><span class="label">Updated</span> <b>November 7, 2026</b></div>
+          <div><span class="label">Applies to</span> <b>Invoice Maker for iPhone &amp; Android</b></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="layout">
+    <nav class="toc" aria-label="Sections">
+      <div class="toc-label">Contents</div>
+      <a class="nav-link" href="#agreement"><span class="n">01</span>Agreement</a>
+      <a class="nav-link" href="#license"><span class="n">02</span>License</a>
+      <a class="nav-link" href="#subscription"><span class="n">03</span>Pro subscription</a>
+      <a class="nav-link" href="#your-data"><span class="n">04</span>Your content</a>
+      <a class="nav-link" href="#no-advice"><span class="n">05</span>No professional advice</a>
+      <a class="nav-link" href="#services"><span class="n">06</span>Third-party services</a>
+      <a class="nav-link" href="#warranty"><span class="n">07</span>Disclaimer and liability</a>
+      <a class="nav-link" href="#apple"><span class="n">08</span>Apple App Store terms</a>
+      <a class="nav-link" href="#law"><span class="n">09</span>Governing law</a>
+      <a class="nav-link" href="#changes"><span class="n">10</span>Changes</a>
+      <a class="nav-link" href="#contact"><span class="n">11</span>Contact</a>
+    </nav>
+
+    <main>
+      <p class="lede">The terms for using Invoice Maker.</p>
+
+      <section id="agreement">
+        <h2><span class="n">01</span>Agreement</h2>
+        <p>These terms apply to your use of Invoice Maker (the "app"), provided by Abdullah Al Mahmud ("we"). By using the app you agree to them.
+          If you downloaded the app from the Apple App Store, Apple's
+          <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Licensed Application End User License
+          Agreement</a> also applies; if these terms conflict with it, Apple's agreement wins.</p>
+      </section>
+
+      <section id="license">
+        <h2><span class="n">02</span>License</h2>
+        <p>We give you a personal, non-transferable license to use the app on devices you own or control, for your own
+          business. You may not copy, resell, reverse engineer or misuse the app or its services.</p>
+      </section>
+
+      <section id="subscription">
+        <h2><span class="n">03</span>Pro subscription</h2>
+        <ul>
+          <li>The free plan includes 5 new estimates or invoices per calendar month. Invoice Maker Pro removes this limit and adds the
+            features described in the app.</li>
+          <li>Pro is an auto-renewing subscription, billed to your Apple ID or Google Play account when you confirm the purchase.
+            It renews automatically unless you cancel at least 24 hours before the end of the current period.</li>
+          <li>You can manage or cancel it in your App Store or Google Play account settings. Refunds are handled by Apple or
+            Google under their policies.</li>
+        </ul>
+      </section>
+
+      <section id="your-data">
+        <h2><span class="n">04</span>Your content</h2>
+        <p>You own the data you enter. You are responsible for it being accurate and lawful, and for having permission to store
+          your clients' details. How we handle data is described in the <a href="privacy-policy.html">Privacy Policy</a>.</p>
+      </section>
+
+      <section id="no-advice">
+        <h2><span class="n">05</span>No professional advice</h2>
+        <p>The app helps you prepare estimates and invoices. It is not tax, legal or accounting advice. You are responsible
+          for your prices, tax rates and totals, and for meeting the invoicing and tax rules where you work.</p>
+      </section>
+
+      <section id="services">
+        <h2><span class="n">06</span>Third-party services</h2>
+        <p>Optional sync uses Google Firebase. Purchases are processed by Apple or Google. Sharing a PDF hands it to the app
+          you choose. These services are covered by their own terms.</p>
+      </section>
+
+      <section id="warranty">
+        <h2><span class="n">07</span>Disclaimer and liability</h2>
+        <p>The app is provided "as is", without warranties of any kind, to the extent the law allows. We are not liable for
+          lost profits, lost data or indirect damages arising from your use of the app. Keep your own copies of important
+          documents. Nothing here limits rights you have under consumer law that cannot be waived.</p>
+      </section>
+
+      <section id="apple">
+        <h2><span class="n">08</span>Apple App Store terms</h2>
+        <ul>
+          <li>These terms are between you and us, not Apple. Apple is not responsible for the app or its content.</li>
+          <li>Apple has no obligation to provide maintenance or support for the app.</li>
+          <li>If the app fails to meet an applicable warranty, you may notify Apple and Apple will refund the purchase price, if
+            any. Apple has no other warranty obligation for the app.</li>
+          <li>We, not Apple, are responsible for handling any claims about the app, including product liability, failure to
+            meet legal or regulatory requirements, and consumer protection claims.</li>
+          <li>We, not Apple, are responsible for investigating and handling any claim that the app infringes someone's
+            intellectual property.</li>
+          <li>You confirm that you are not in a country subject to a U.S. Government embargo or listed as a "terrorist
+            supporting" country, and that you are not on a U.S. Government list of prohibited or restricted parties.</li>
+          <li>Apple and its subsidiaries are third-party beneficiaries of these terms and may enforce them against you.</li>
+        </ul>
+      </section>
+
+      <section id="law">
+        <h2><span class="n">09</span>Governing law</h2>
+        <p>These terms are governed by the laws of Bangladesh, except where your local consumer law says otherwise.</p>
+      </section>
+
+      <section id="changes">
+        <h2><span class="n">10</span>Changes</h2>
+        <p>We may update these terms. We will change the date at the top of this page when we do.</p>
+      </section>
+
+      <section id="contact">
+        <h2><span class="n">11</span>Contact</h2>
+        <div class="contact-card">
+          <div class="contact-row"><span class="k">Developer</span><span class="v">Abdullah Al Mahmud</span></div>
+          <div class="contact-row"><span class="k">Email</span><span class="v"><a href="mailto:abdudevs@gmail.com">abdudevs@gmail.com</a></span></div>
+          <div class="contact-row"><span class="k">App</span><span class="v">Invoice Maker (com.nadesoft.quoteit)</span></div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <footer>
+    Invoice Maker · Terms of Use · Updated November 7, 2026<br>
+    <a href="index.html">Home</a><a href="support.html">Support</a><a href="privacy-policy.html">Privacy Policy</a><a href="terms.html">Terms of Use</a><a href="data-deletion.html">Delete Your Data</a>
+  </footer>
+
+</body>
+</html>

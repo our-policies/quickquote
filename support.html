@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Invoice Maker Support</title>
+<meta name="description" content="Invoice Maker: estimates and invoices for contractors. Support.">
+<style>
+  :root {
+    --bg: #F5F7FA;
+    --surface: #FFFFFF;
+    --text: #101317;
+    --muted: #5B6572;
+    --border: #D9DEE4;
+    --accent: #0B5FFF;
+    --accent-soft: #EAF1FF;
+    --font-display: 'Space Grotesk', system-ui, sans-serif;
+    --font-body: 'IBM Plex Sans', -apple-system, Helvetica, Arial, sans-serif;
+    --font-mono: 'IBM Plex Mono', ui-monospace, Consolas, monospace;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0E1116;
+      --surface: #161B22;
+      --text: #EDF1F5;
+      --muted: #94A1B0;
+      --border: #262E38;
+      --accent: #5B92FF;
+      --accent-soft: rgba(91, 146, 255, 0.14);
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0E1116;
+    --surface: #161B22;
+    --text: #EDF1F5;
+    --muted: #94A1B0;
+    --border: #262E38;
+    --accent: #5B92FF;
+    --accent-soft: rgba(91, 146, 255, 0.14);
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent); }
+  a:focus-visible, button:focus-visible, .nav-link:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+
+  .letterhead {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+  }
+  .letterhead-inner {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 40px 24px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .brand-mark {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: var(--accent);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 18px;
+    flex: none;
+  }
+  .brand-name {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 20px;
+  }
+  .brand-tag {
+    font-size: 12.5px;
+    color: var(--muted);
+  }
+  .doc-meta {
+    text-align: right;
+  }
+  .doc-title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 26px;
+    color: var(--accent);
+    text-wrap: balance;
+  }
+  .doc-fields {
+    margin-top: 6px;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--muted);
+    display: grid;
+    gap: 2px;
+  }
+  .doc-fields span.label {
+    color: var(--muted);
+    letter-spacing: 0.04em;
+  }
+  .doc-fields b {
+    color: var(--text);
+    font-weight: 500;
+  }
+
+  .layout {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 40px 24px 96px;
+    display: grid;
+    grid-template-columns: 220px minmax(0, 1fr);
+    gap: 56px;
+    align-items: start;
+  }
+  @media (max-width: 780px) {
+    .layout { grid-template-columns: 1fr; gap: 32px; }
+    .toc { display: none; }
+  }
+
+  .toc {
+    position: sticky;
+    top: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .toc-label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 10px;
+  }
+  .nav-link {
+    display: flex;
+    gap: 10px;
+    align-items: baseline;
+    padding: 7px 8px;
+    margin: 0 -8px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--muted);
+    font-size: 13.5px;
+    transition: background 0.15s ease, color 0.15s ease;
+  }
+  .nav-link:hover { background: var(--accent-soft); color: var(--text); }
+  .nav-link .n {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--accent);
+    flex: none;
+    width: 18px;
+  }
+
+  main { max-width: 680px; min-width: 0; }
+
+  .lede {
+    font-size: 16px;
+    color: var(--muted);
+    margin: 0 0 40px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid var(--border);
+  }
+  .lede strong { color: var(--text); }
+
+  section {
+    margin-bottom: 40px;
+    scroll-margin-top: 24px;
+  }
+  section h2 {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    font-family: var(--font-display);
+    font-size: 19px;
+    font-weight: 600;
+    margin: 0 0 14px;
+    text-wrap: balance;
+  }
+  section h2 .n {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--accent);
+  }
+  section p { margin: 0 0 14px; font-size: 15px; }
+  section ul { margin: 0 0 14px; padding-left: 20px; }
+  section li { margin-bottom: 8px; font-size: 15px; }
+  section li::marker { color: var(--accent); }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px 18px;
+    margin: 0 0 14px;
+  }
+  .card-label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 6px;
+  }
+  .card p:last-child { margin-bottom: 0; }
+
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 0 14px;
+    font-size: 13.5px;
+  }
+  .data-table th {
+    text-align: left;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--muted);
+    border-bottom: 2px solid var(--text);
+    padding: 8px 10px 8px 0;
+  }
+  .data-table td {
+    padding: 10px 10px 10px 0;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  .data-table tr:last-child td { border-bottom: none; }
+  .pill {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 999px;
+    background: var(--accent-soft);
+    color: var(--accent);
+    white-space: nowrap;
+  }
+
+  .contact-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 24px;
+  }
+  .contact-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 14.5px;
+  }
+  .contact-row:last-child { border-bottom: none; }
+  .contact-row .k { color: var(--muted); }
+  .contact-row .v { text-align: right; font-weight: 500; }
+
+  .placeholder {
+    background: var(--accent-soft);
+    color: var(--accent);
+    padding: 1px 5px;
+    border-radius: 4px;
+    font-family: var(--font-mono);
+    font-size: 13px;
+  }
+
+  footer {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 0 24px 48px;
+    color: var(--muted);
+    font-size: 12.5px;
+    border-top: 1px solid var(--border);
+    padding-top: 24px;
+  }
+  .site-nav { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 10px; font-size: 13px; }
+  .site-nav a { text-decoration: none; }
+  .site-nav a[aria-current="page"] { font-weight: 700; color: var(--text); }
+  footer a { margin: 0 6px; }
+</style>
+</head>
+<body>
+
+  <header class="letterhead">
+    <div class="letterhead-inner">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">IM</div>
+        <div>
+          <div class="brand-name">Invoice Maker</div>
+          <div class="brand-tag">Estimates &amp; invoices for contractors</div>
+          <nav class="site-nav" aria-label="Site"><a href="index.html">Home</a><a href="support.html" aria-current="page">Support</a><a href="privacy-policy.html">Privacy Policy</a><a href="terms.html">Terms of Use</a><a href="data-deletion.html">Delete Your Data</a></nav>
+        </div>
+      </div>
+      <div class="doc-meta">
+        <div class="doc-title">Support</div>
+        <div class="doc-fields">
+          <div><span class="label">Updated</span> <b>November 7, 2026</b></div>
+          <div><span class="label">Applies to</span> <b>Invoice Maker for iPhone &amp; Android</b></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="layout">
+    <nav class="toc" aria-label="Sections">
+      <div class="toc-label">Contents</div>
+      <a class="nav-link" href="#contact"><span class="n">01</span>Contact us</a>
+      <a class="nav-link" href="#start"><span class="n">02</span>Getting started</a>
+      <a class="nav-link" href="#faq"><span class="n">03</span>Frequently asked questions</a>
+    </nav>
+
+    <main>
+      <p class="lede">Help with Invoice Maker, the estimate and invoice app for contractors.</p>
+
+      <section id="contact">
+        <h2><span class="n">01</span>Contact us</h2>
+        <p>Email us and we will reply as soon as we can, usually within two business days. Tell us your phone model and what
+          you were doing when the problem happened.</p>
+        <div class="contact-card">
+          <div class="contact-row"><span class="k">Developer</span><span class="v">Abdullah Al Mahmud</span></div>
+          <div class="contact-row"><span class="k">Email</span><span class="v"><a href="mailto:abdudevs@gmail.com">abdudevs@gmail.com</a></span></div>
+          <div class="contact-row"><span class="k">App</span><span class="v">Invoice Maker (com.nadesoft.quoteit)</span></div>
+        </div>
+      </section>
+
+      <section id="start">
+        <h2><span class="n">02</span>Getting started</h2>
+        <ul>
+          <li><strong>Add your business details:</strong> Settings &gt; Business Profile. Your name, logo, address, tax rate,
+            currency and payment terms appear on every PDF.</li>
+          <li><strong>Create an estimate or invoice:</strong> on the Dashboard, tap New Estimate or New Invoice, pick a client, and add items
+            from your catalog or type your own.</li>
+          <li><strong>Get it signed:</strong> open the document, tap Preview &amp; Share PDF, then Capture Signature. A signed estimate is marked approved.</li>
+          <li><strong>Send it:</strong> on the same screen tap Share PDF, then choose email, WhatsApp, Messages or any other app.</li>
+        </ul>
+      </section>
+
+      <section id="faq">
+        <h2><span class="n">03</span>Frequently asked questions</h2>
+        <p><strong>Does it work without internet?</strong><br>Yes. Everything is stored on your phone. You only need internet
+          to sign in, sync, buy a subscription or share a PDF through an online app.</p>
+        <p><strong>How many documents can I make for free?</strong><br>5 new estimates or invoices each calendar month. The count
+          resets on the 1st. Invoice Maker Pro removes the limit.</p>
+        <p><strong>What does Pro include?</strong><br>Unlimited estimates and invoices, all 5 PDF templates, no app credit on your
+          PDFs, analytics (monthly revenue, estimate win rate, top clients) and crew sharing with up to 5 crew members, who join for free.</p>
+        <p><strong>How do I restore my subscription on a new phone?</strong><br>Sign in to the same Apple ID or Google account,
+          open the Analytics tab, tap Upgrade to Pro, then Restore Purchases.</p>
+        <p><strong>How do I cancel my subscription?</strong><br>On iPhone: Settings &gt; your name &gt; Subscriptions. On
+          Android: Google Play &gt; Payments &amp; subscriptions. Deleting the app or your account does not cancel it.</p>
+        <p><strong>How do I use my data on another device?</strong><br>Sign in on both devices with the same account (Settings &gt;
+          Sign In / Sign Up). On the new device the app finds your business and offers to switch to it.</p>
+        <p><strong>How do I add my crew?</strong><br>Settings &gt; Manage Crew &gt; Create Invite Code, then send the code. Your crew
+          member signs in, opens Manage Crew and enters it under Join a Crew. Joining is free, and crew members get Pro features while they are on a Pro owner's crew. Pro includes up to 5 crew members besides you. Codes expire after 7 days.</p>
+        <p><strong>How do I change the currency?</strong><br>Settings &gt; Business Profile &gt; Currency, then Save Business Profile.</p>
+        <p><strong>How do I delete my account?</strong><br>Settings &gt; Manage Account &amp; Sync &gt; Delete My Account. See
+          <a href="data-deletion.html">Delete your data</a>.</p>
+      </section>
+    </main>
+  </div>
+
+  <footer>
+    Invoice Maker · Support · Updated November 7, 2026<br>
+    <a href="index.html">Home</a><a href="support.html">Support</a><a href="privacy-policy.html">Privacy Policy</a><a href="terms.html">Terms of Use</a><a href="data-deletion.html">Delete Your Data</a>
+  </footer>
+
+</body>
+</html>
